@@ -1,0 +1,258 @@
+html  {
+	height:100%;
+	width:100%;
+	margin: 0px;
+	padding: 0px;
+	font-size: small;
+
+}
+
+
+body {
+	height:100%;
+	width:100%;
+	margin:0px;
+	padding: 0px;
+	display: block;
+	font-size: small;
+}
+
+a /* avec le a on travaille sur les liens*/
+
+{text-decoration: none;
+/* cette commande enlève le soulignage permanent des liens comme le Gmail*/
+color: #222;
+font-family: arial;
+
+}
+
+a:hover {text-decoration: underline; }
+/* avec cette commande les liens vont se souligner quand on passera desssus avec 
+la souris*/ 
+
+#div {
+	display: block;
+}
+
+#menu {
+	display: grid;
+	grid-template-columns: 60px 935px 60px 65px 40px 50px ;
+	/*on crée la disposition des boutons du haut, il y a les 4 boutons dont on détermine la taille, j'en ai créé un premier qui est vide sinon
+	le gmail n'apparaissait pas au bon endroit, le 2e est trouvé en testant pour écarter le gmail etc*/
+	grid-template-rows: 63px ;
+	/*la hauteur d'une colonne */
+	grid-template-areas: 
+ 	"empty. Gmail Images Applications Connexion"; /* l'ordre dans lequel on veut que les 
+ 	éléments apparaissent dans le tableau */ 
+
+	}
+
+/* les 5 éléments suivants c'est ce qu'on retrouve dans la grille du dessus, on les renomme
+pour les placer dans la grille */ 
+#empty{
+	grid-area: empty;
+}
+
+#Gmail {
+	grid-area: Gmail;
+	justify-content:center; 
+	align-self: center
+	;
+	margin-left: 10px;
+}
+
+#Images {
+grid-area: Images;
+justify-content:center; 
+align-self: center;
+
+}
+#Applications {grid-area: Applications; 
+	justify-content:center; 
+	align-self: center;
+	
+
+}
+#Connexion {grid-area: Connexion;
+	justify-content:center; 
+	align-self: center;
+	font-weight: bold;
+	background-color: #4683ea; 
+	border: 1px solid #4285f4;
+	color:white;
+	height: 28px ;line-height: 27px;
+	width: 89px;
+	text-align: center;
+}
+
+/* on code pour où le logo va apparaître, au milieu de la page*/ 
+#googlelogo {
+	display :grid;
+	grid-template-columns: 500px 400PX 300PX;
+	grid-template-rows: 90PX;
+	grid-template-areas: 
+	". . ."
+	". logo ." ;
+
+}
+
+#logo{
+	grid-area: logo;
+	width:2px;
+}
+
+
+
+/* le code de la barre de recherche */ 
+#bar {
+	display: grid;
+	grid-template-columns: 400PX 500px 400px;
+	grid-template-rows: 27px ;
+	grid-template-areas: 
+ 	". recherche .";
+ 	position: relative;
+
+
+}
+#recherche {
+grid-area: recherche ;
+justify-content: center;
+border :1px solid #dfe1e5;
+display: flex;
+border-radius: 24px;
+    z-index: 3;
+    height: 44px;
+    outline: none;
+
+   }
+/* C'est pour la forme de la barre de recherche */ 
+
+#bar > img {
+	position: relative;
+	left: 370px;
+	top: 15px;
+}
+
+/* j'ai essayé de mettre la petite loupe dans la barre de recherche mais j'ai pas réussi à la faire passer au-dessus
+elle restait en dessous, du coup elle est juste à côté de la barre de recherche */ 
+
+
+/* c'est le code pour les deux boutons sous la barre de recherche */ 
+#buttons {
+	display :grid;
+	grid-template-columns: 450px 190px 10px 190px 250px ;
+	grid-template-rows: 118px; 
+	grid-template-areas: 
+	" emptyb search emptyc chance .";
+}
+
+/* ici c'est pour le design et la forme des 2 boutons */ 
+#search {
+grid-area: search;
+justify-content: center;
+align-self: center;
+background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    
+    padding: 0 16px;
+    line-height: 27px;
+    height: 30px;
+    min-width: 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#Chance {
+
+	grid-area: chance;
+justify-content: center;
+align-self: center; 
+background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    
+    padding: 0 16px;
+    line-height: 27px;
+    height: 30px;
+    min-width: 20px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+/* les deux empty c'est des éléments que j'ai créés pour la disposition des boutons
+, avec juste un point dans la grille ça ne marchait pas, le deuxième vide c'est 
+pour la séparation entre les deux boutons */ 
+ #emptyb{
+	grid-area: emptyb;
+}  
+ #emptyc{
+	grid-area: emptyc;
+} 
+
+/* ici c'est un espace vide pour séparer les boutons de la partie du bas */ 
+#vide {
+	display: grid;
+	grid-template-columns: 900px;
+	 grid-template-rows: 110px;
+	grid-template-areas: "vid" ;
+}
+#vid {
+	grid-area: vid;
+}
+
+/*ici on a le code pour la partie du bas, avec les différents liens*/ 
+#bottom{
+	font-size: 14px;
+	display: grid;
+	grid-template-columns: 100px 100px 100px 300px 200px 160px 100px 100px 100px;
+	grid-template-rows: 50px;
+	grid-template-areas: 
+	"france . . . . . . . . "
+	"Publicité Entreprise apropos how . infos Confidentialité Conditions Paramètres"
+	;
+	
+
+
+}
+
+#france {
+	grid-area: france;
+	justify-content: center
+	;
+	text-align: center
+	;
+font-size: 14px;
+
+}
+
+#Publicité{grid-area: Publicité;
+justify-content: center;
+align-self: center;
+text-align: center;
+}
+
+#Entreprise {grid-area: Entreprise;
+/*justify-content: center; */
+text-align: center;}
+#Apropos {grid-area: apropos;
+justify-content: center;text-align: center;}
+#how {grid-area: how;
+justify-content: center;text-align: center;}
+#Infos {grid-area: infos;
+justify-content: center;text-align: center;}
+#Confidentialité {grid-area: Confidentialité;
+justify-content: center;text-align: center;}
+#Conditions {grid-area: Conditions;
+justify-content: center;text-align: center;}
+#Paramètres {grid-area: Paramètres;
+justify-content: center;text-align: center;}
